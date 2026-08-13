@@ -1,2 +1,7 @@
 .claude/
 node_modules/
+
+# Ticket text must never be tracked in a repo QA clones. A --depth 1 clone of the base
+# commit includes every tracked file, so acceptance criteria sitting at the repo root hand QA
+# the exact function names and boundary cases it is supposed to derive from the prose spec alone.
+ship-args*.json
