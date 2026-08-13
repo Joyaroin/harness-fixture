@@ -1,6 +1,17 @@
 {
   "version": 1,
   "gates": [
-    { "name": "test", "cmd": "npm test", "when": ["slice", "wave"], "usedBy": ["qa"] }
+    {
+      "name": "test",
+      "cmd": "npm test",
+      "when": [
+        "slice",
+        "merge",
+        "wave"
+      ],
+      "usedBy": [
+        "qa"
+      ]
+    }
   ]
 }
