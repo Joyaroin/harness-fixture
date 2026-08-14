@@ -1,0 +1,20 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main, "integration/**"]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm test
+      - name: no console.log in src
+        run: |
+          if grep -rn 'console\.log' src/; then
+            echo "console.log found in src/ — this repo's CI forbids stray console logging in library code; remove it"
+            exit 1
+          fi
