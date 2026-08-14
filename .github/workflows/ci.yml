@@ -18,3 +18,10 @@ jobs:
             echo "console.log found in src/ — this repo's CI forbids stray console logging in library code; remove it"
             exit 1
           fi
+      - name: changelog entry required
+        if: github.event_name == 'pull_request'
+        run: |
+          if [ ! -f CHANGELOG.md ]; then
+            echo "This repository requires a CHANGELOG.md; every change set must add or update it with a short entry."
+            exit 1
+          fi
