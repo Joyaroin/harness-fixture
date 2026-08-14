@@ -1,6 +1,6 @@
 import { test } from "node:test"
 import assert from "node:assert/strict"
-import { titleCase, truncate } from "../src/text.js"
+import { titleCase, truncate, wordCount } from "../src/text.js"
 
 test("titleCase capitalises each word", () => {
   assert.equal(titleCase("hello there"), "Hello There")
@@ -24,4 +24,13 @@ test("truncate with a limit of 0 keeps no characters and is just the ellipsis", 
 
 test("truncate with a limit of 0 leaves an empty string alone", () => {
   assert.equal(truncate("", 0), "")
+})
+
+test("wordCount counts the words in a string", () => {
+  assert.equal(wordCount("hello there world"), 3)
+})
+
+test("wordCount is 0 for an empty or whitespace-only string", () => {
+  assert.equal(wordCount(""), 0)
+  assert.equal(wordCount("   \t\n  "), 0)
 })
