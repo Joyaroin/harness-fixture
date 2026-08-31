@@ -5,3 +5,8 @@ export function titleCase(s) {
 export function normalise(s) {
   return s.trim().replace(/\s+/g, " ")
 }
+
+export function truncate(s, max) {
+  if (s.length <= max) return s
+  return s.slice(0, max - 1) + "…"
+}
