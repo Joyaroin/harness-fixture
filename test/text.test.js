@@ -1,6 +1,6 @@
 import { test } from "node:test"
 import assert from "node:assert/strict"
-import { normalise, titleCase, truncate } from "../src/text.js"
+import { normalise, slugify, titleCase, truncate } from "../src/text.js"
 
 test("titleCase capitalises each word", () => {
   assert.equal(titleCase("hello there"), "Hello There")
@@ -36,4 +36,16 @@ test("truncate leaves a string of exactly max characters untouched", () => {
 test("truncate handles the empty string", () => {
   assert.equal(truncate("", 5), "")
   assert.equal(truncate("", 0), "")
+})
+
+test("slugify lowercases and joins words with a hyphen", () => {
+  assert.equal(slugify("Hello There World"), "hello-there-world")
+})
+
+test("slugify returns the empty string for the empty string", () => {
+  assert.equal(slugify(""), "")
+})
+
+test("slugify drops characters that are not a letter, a digit or a separator", () => {
+  assert.equal(slugify("  Hello,   There!  It's 42% Done  "), "hello-there-its-42-done")
 })
