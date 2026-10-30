@@ -12,3 +12,4 @@
 - `reverseWords(s)` added as a named export of `src/text.js`: splits on runs of whitespace,
   ignores empty pieces, reverses their order, and joins with a single space.
   `reverseWords("")` returns `""`.
+- Add `sum(numbers)` to `src/num.js`, returning the total of an array of numbers; `sum([])` returns `0`.
