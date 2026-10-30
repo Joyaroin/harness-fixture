@@ -16,3 +16,4 @@
   with `ch` until it is `width` characters long, returning `s` unchanged when it is already
   `width` or longer.
 - Add `sum(numbers)` to `src/num.js`, returning the total of an array of numbers; `sum([])` returns `0`.
+- Add `mean(numbers)` to `src/num.js`, computed as `sum(numbers) / numbers.length`; throws a `RangeError` on an empty array.

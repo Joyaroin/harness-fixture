@@ -1,6 +1,6 @@
 import { test } from "node:test"
 import assert from "node:assert/strict"
-import { clamp, percent, sum } from "../src/num.js"
+import { clamp, percent, sum, mean } from "../src/num.js"
 
 test("clamp returns n when n is inside the range", () => {
   assert.equal(clamp(5, 0, 10), 5)
@@ -56,4 +56,12 @@ test("sum returns 0 for an empty array", () => {
 
 test("sum returns the element itself for a single-element array", () => {
   assert.equal(sum([7]), 7)
+})
+
+test("mean returns the average of an array of numbers", () => {
+  assert.equal(mean([2, 4, 6]), 4)
+})
+
+test("mean throws a RangeError for an empty array", () => {
+  assert.throws(() => mean([]), RangeError)
 })
