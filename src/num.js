@@ -12,3 +12,14 @@ export function percent(part, whole) {
   const rounded = Math.round((part / whole) * 100)
   return `${clamp(rounded, 0, 100)}%`
 }
+
+export function sum(numbers) {
+  return numbers.reduce((total, n) => total + n, 0)
+}
+
+export function mean(numbers) {
+  if (numbers.length === 0) {
+    throw new RangeError(`numbers (${numbers}) must not be empty`)
+  }
+  return sum(numbers) / numbers.length
+}

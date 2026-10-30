@@ -17,3 +17,10 @@ export function reverseWords(s) {
     .reverse()
     .join(" ")
 }
+
+export function padLeft(s, width, ch = " ") {
+  if (s.length >= width) {
+    return s
+  }
+  return ch.repeat(width - s.length) + s
+}
