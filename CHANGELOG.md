@@ -12,3 +12,6 @@
 - `reverseWords(s)` added as a named export of `src/text.js`: splits on runs of whitespace,
   ignores empty pieces, reverses their order, and joins with a single space.
   `reverseWords("")` returns `""`.
+- `padLeft(s, width, ch = " ")` added as a named export of `src/text.js`: pads `s` on the left
+  with `ch` until it is `width` characters long, returning `s` unchanged when it is already
+  `width` or longer.
