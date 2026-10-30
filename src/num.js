@@ -16,3 +16,10 @@ export function percent(part, whole) {
 export function sum(numbers) {
   return numbers.reduce((total, n) => total + n, 0)
 }
+
+export function mean(numbers) {
+  if (numbers.length === 0) {
+    throw new RangeError(`numbers (${numbers}) must not be empty`)
+  }
+  return sum(numbers) / numbers.length
+}
