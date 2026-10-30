@@ -8,3 +8,4 @@
 - `initials(name)` added as a named export of `src/text.js`: splits on runs of whitespace,
   ignores empty pieces, and joins the uppercased first character of each word with no
   separator. `initials("")` returns `""`.
+- Add `percent(part, whole)` to `src/num.js`, a whole-number percentage string built on `clamp`; returns `"0%"` when `whole` is `0`.
