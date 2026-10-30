@@ -16,3 +16,6 @@
   with `ch` until it is `width` characters long, returning `s` unchanged when it is already
   `width` or longer.
 - Add `sum(numbers)` to `src/num.js`, returning the total of an array of numbers; `sum([])` returns `0`.
+- Add `formatRow(cells, widths)` to new `src/table.js`, formatting cells left-padded to their
+  column widths (via `padLeft` from `src/text.js`) and joined with `" | "`; `formatRow([], [])`
+  returns `""`.
